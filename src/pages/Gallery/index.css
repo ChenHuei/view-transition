@@ -1,0 +1,71 @@
+.gallery {
+	padding: 3rem 1rem;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 2rem;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+figure {
+	display: block;
+	cursor: pointer;
+	background-color: var(--color);
+	letter-spacing: 0.01rem;
+	border: 2px solid #111;
+	font-size: 24px;
+	font-weight: 700;
+	box-shadow: 5px 5px 0 1px #111;
+}
+
+figure div {
+	overflow: hidden;
+	position: relative;
+	background-color: hsl(0, 0%, 0%, 0.3);
+	aspect-ratio: 1;
+	background-position: 50% 50%;
+	background-size: cover;
+}
+
+figcaption {
+	padding: 1rem;
+}
+
+.overlay {
+	position: fixed;
+	left: 0;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.7);
+	width: 100vw;
+	height: 100vh;
+	z-index: 2;
+	padding-right: 17px;
+	cursor: pointer;
+}
+
+.overlay__inner {
+	width: 40%;
+	height: 50%;
+	padding: 2rem 1rem;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+.overlay:not(.overlay--active) {
+	display: none;
+}
+
+.gallery__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 50% 50%;
+	aspect-ratio: 1;
+}
+
+.gallery__image--active {
+	view-transition-name: active-image;
+}

@@ -1,0 +1,73 @@
+.native-app {
+	height: 100%;
+	view-transition-name: native-app;
+}
+
+.section {
+	height: 100%;
+	background: #fff;
+}
+
+::view-transition-old(native-app) {
+	animation-duration: 0.8s;
+	animation-name: slide-out;
+	mix-blend-mode: normal;
+}
+
+::view-transition-new(native-app) {
+	animation-duration: 0.8s;
+	animation-name: slide-in;
+	box-shadow: 0 0 40px #0003;
+	mix-blend-mode: normal;
+}
+
+.back::view-transition-old(native-app) {
+	animation-duration: 0.8s;
+	animation-name: back-slide-out;
+	box-shadow: 0 0 40px #0003;
+	mix-blend-mode: normal;
+}
+
+.back::view-transition-new(native-app) {
+	animation-duration: 0.8s;
+	animation-name: back-slide-in;
+	mix-blend-mode: normal;
+}
+
+@keyframes slide-out {
+	from {
+		left: 0%;
+	}
+	to {
+		left: -40%;
+	}
+}
+
+@keyframes slide-in {
+	from {
+		left: 100%;
+	}
+	to {
+		left: 0%;
+	}
+}
+
+@keyframes back-slide-out {
+	from {
+		left: 0%;
+		z-index: 10000;
+	}
+	to {
+		left: 100%;
+		z-index: 10000;
+	}
+}
+
+@keyframes back-slide-in {
+	from {
+		left: -40%;
+	}
+	to {
+		left: 0%;
+	}
+}
